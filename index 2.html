@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ahmed ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%}
+body{font-family:Arial,sans-serif;overflow:hidden;background:#fff}
+.page{position:fixed;inset:0;width:100%;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:transform .8s ease,opacity .8s ease}
+#page1{background:#fff;z-index:2}
+#page2{background:#fff;z-index:1;transform:translateY(100%);opacity:0;overflow-y:auto;padding:30px 15px}
+body.message-open #page1{transform:translateY(-100%);opacity:0}
+body.message-open #page2{transform:translateY(0);opacity:1;z-index:3}
+h1{position:relative;z-index:20;color:#ff1493;font-size:clamp(45px,9vw,90px);text-align:center;text-shadow:0 0 5px #ffb6d9,0 0 15px #ff69b4,0 0 30px #ff1493;animation:glow 1.5s infinite alternate}
+h2{position:relative;z-index:20;margin-top:15px;font-size:clamp(30px,6vw,55px);color:#222}
+@keyframes glow{from{transform:scale(1)}to{transform:scale(1.05)}}
+button{position:relative;z-index:100;border:none;padding:15px 35px;border-radius:50px;background:linear-gradient(135deg,#ff1493,#ff69b4);color:white;font-size:18px;font-weight:bold;cursor:pointer;box-shadow:0 5px 20px rgba(255,20,147,.35)}
+.open-btn{margin-top:30px}.back-btn{margin-top:25px}
+.balloon{position:absolute;bottom:-150px;width:55px;height:70px;border-radius:50%;animation:balloonMove 10s linear infinite;z-index:5}
+.balloon:after{content:"";position:absolute;width:2px;height:120px;background:#777;left:50%;top:68px}
+@keyframes balloonMove{0%{bottom:-150px}100%{bottom:110%;transform:translateX(-20px)}}
+.heart{position:absolute;bottom:-50px;font-size:28px;animation:heartMove 8s linear infinite;z-index:6}
+@keyframes heartMove{0%{bottom:-50px;opacity:0}20%{opacity:1}100%{bottom:110%;opacity:0}}
+.firework{position:absolute;width:8px;height:8px;border-radius:50%;background:#ff1493;animation:fireworks 2s infinite;z-index:4}
+@keyframes fireworks{0%,100%{transform:scale(0);opacity:0}50%{transform:scale(1);opacity:1;box-shadow:0 -70px red,70px 0 gold,-70px 0 cyan,0 70px lime,50px 50px orange,-50px -50px violet,50px -50px pink,-50px 50px blue}}
+.message-container{width:100%;max-width:850px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.message{width:100%;background:white;padding:30px;border-radius:25px;box-shadow:0 5px 30px rgba(255,20,147,.15);color:#222;font-size:20px;line-height:1.8}
+.message p{margin-bottom:22px}.message strong{color:#ff1493;font-size:28px}
+@media(max-width:600px){h1{font-size:45px}h2{font-size:35px}.message{padding:20px;font-size:17px}}
+</style>
+</head>
+<body>
+<section id="page1" class="page">
+<div class="firework" style="top:18%;left:15%"></div>
+<div class="firework" style="top:20%;right:15%;animation-delay:.7s"></div>
+<div class="firework" style="bottom:20%;left:50%;animation-delay:1.3s"></div>
+<div class="balloon" style="left:5%;background:#ff3366"></div>
+<div class="balloon" style="left:22%;background:#00cfff;animation-duration:12s"></div>
+<div class="balloon" style="left:40%;background:#ffd700;animation-duration:9s"></div>
+<div class="balloon" style="left:65%;background:#8cff00;animation-duration:11s"></div>
+<div class="balloon" style="left:85%;background:#9b59ff;animation-duration:10s"></div>
+<div class="heart" style="left:10%;animation-duration:9s">❤️</div>
+<div class="heart" style="left:30%;animation-duration:11s">❤️</div>
+<div class="heart" style="left:50%;animation-duration:8s">❤️</div>
+<div class="heart" style="left:70%;animation-duration:10s">❤️</div>
+<div class="heart" style="left:90%;animation-duration:12s">❤️</div>
+<h1>HAPPY BIRTHDAY</h1>
+<h2>Ahmed ❤️</h2>
+<button id="openMessageButton" class="open-btn">Open Your Message 💌</button>
+</section>
+<section id="page2" class="page">
+<div class="message-container">
+<div class="message">
+<p>Another year older and wiser, or just older in your case😛</p>
+<p>I wish I were better at putting my feelings into words so I could tell you how much you mean to me. But I hope my actions have shown you that.</p>
+<p>I hope every year brings you happiness and peace. Never change, stay as kind and wonderful as you are.</p>
+<p><strong>HAPPY BIRTHDAY🫂❤️</strong></p>
+<p>May you celebrate this birthday the way you celebrated the first one=naked and screaming🤭</p>
+</div>
+<button id="backButton" class="back-btn">← Back</button>
+</div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+document.getElementById("openMessageButton").addEventListener("click",function(){document.body.classList.add("message-open")});
+document.getElementById("backButton").addEventListener("click",function(){document.body.classList.remove("message-open")});
+});
+</script>
+</body>
+</html>
